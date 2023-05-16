@@ -14504,6 +14504,18 @@ Transform:
   m_Father: {fileID: 1747433532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &345577886 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3885370230883199266, guid: 36ff76a9e7929f342915274725573e00,
+    type: 3}
+  m_PrefabInstance: {fileID: 1885097036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &345731298
 GameObject:
   m_ObjectHideFlags: 0
@@ -27271,6 +27283,18 @@ MonoBehaviour:
   cellWidth: 0.4
   cellHeight: 0.28
   assetVersion: 1
+--- !u!114 &693225169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3885370230883199266, guid: 36ff76a9e7929f342915274725573e00,
+    type: 3}
+  m_PrefabInstance: {fileID: 1910771458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695625593
 GameObject:
   m_ObjectHideFlags: 0
@@ -74341,8 +74365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wristMenu: {fileID: 1790482366}
-  Height_DeltaText: {fileID: 0}
-  Distance_DeltaText: {fileID: 0}
+  Height_DeltaText: {fileID: 345577886}
+  Distance_DeltaText: {fileID: 693225169}
 --- !u!1 &1793270544
 GameObject:
   m_ObjectHideFlags: 0

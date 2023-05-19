@@ -10,6 +10,7 @@
     }
   ],
   "dependencies": {
+    "com.endel.nativewebsocket": "https://github.com/endel/NativeWebSocket.git#upm",
     "com.microsoft.azure.spatial-anchors-sdk.core": "file:../Assets/com.microsoft.azure.spatial-anchors-sdk.core-2.7.1.tgz",
     "com.microsoft.azure.spatial-anchors-sdk.windows": "file:../Assets/com.microsoft.azure.spatial-anchors-sdk.windows-2.7.1.tgz",
     "com.microsoft.mixedreality.sceneunderstanding": "file:MixedReality/com.microsoft.mixedreality.sceneunderstanding-0.6.0.tgz",

@@ -57,6 +57,7 @@ public class UIATaskProcedure : MonoBehaviour
         }
 
 		UpdateTask();
+		taskTitle.SetText("Pick a procedure");
     }
 
 	public void SetProcedure(int procedure) {
@@ -196,7 +197,7 @@ public class UIATaskProcedure : MonoBehaviour
         previousTaskIcon.SetActive(false);
 		taskManager.HideTask();
 		nextTaskIcon.SetActive(false);
-
+		taskTitle.SetText("Pick a procedure");
 	}
 
 	private void ResetIndex() {

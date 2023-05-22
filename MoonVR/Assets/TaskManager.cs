@@ -9,6 +9,7 @@ public class TaskManager : MonoBehaviour
 {
     public GameObject[] taskSet;
     public Interactable[] taskButtons;
+    public UIATaskProcedure procedureManager;
 
     private int count = 0;
 
@@ -31,7 +32,7 @@ public class TaskManager : MonoBehaviour
 
     public void TaskOnClick(int buttonIndex)
     {
-        count++;
+        /*count++;
 
         for (int i = 0; i < taskSet.Length; i++)
         {
@@ -45,13 +46,29 @@ public class TaskManager : MonoBehaviour
                 taskSet[i].SetActive(false);
             }
             
-        }
+        }*/
 
-        
-    }
+		if (procedureManager.activeProcedure == buttonIndex && taskSet[0].activeSelf) {
+			taskSet[0].SetActive(false);
+			procedureManager.nextTaskIcon.SetActive(false);
+			procedureManager.previousTaskIcon.SetActive(false);
+			procedureManager.doneIcon.SetActive(false);
+
+		} else {
+			procedureManager.SetProcedure(buttonIndex);
+			taskSet[0].SetActive(true);
+
+		}
+
+
+	}
     // Update is called once per frame
     void Update()
     {
         
     }
+
+    public void HideTask() {
+		taskSet[0].SetActive(false);
+	}
 }

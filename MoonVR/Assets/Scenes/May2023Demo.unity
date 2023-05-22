@@ -15146,10 +15146,10 @@ Transform:
   - {fileID: 1180127509}
   - {fileID: 2060839002}
   - {fileID: 669043466}
-  - {fileID: 555616332}
   - {fileID: 2118713876}
   - {fileID: 919495377}
   - {fileID: 578459665}
+  - {fileID: 555616332}
   - {fileID: 734787458}
   m_Father: {fileID: 1747433532}
   m_RootOrder: 0
@@ -23465,15 +23465,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555616324}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1395, y: -0.1224, z: 0.4479084}
-  m_LocalScale: {x: 0.7, y: 2, z: 0.4}
+  m_LocalPosition: {x: 0.13602002, y: -0.10569412, z: 0.44590864}
+  m_LocalScale: {x: 0.7, y: 1, z: 0.4}
   m_Children:
   - {fileID: 1134626728}
   - {fileID: 520398212}
   - {fileID: 1703578951}
   - {fileID: 936757919}
   m_Father: {fileID: 340189916}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &555616333
 MonoBehaviour:
@@ -24394,7 +24394,7 @@ RectTransform:
   m_LocalScale: {x: 0.8, y: 0.79999995, z: 0.8}
   m_Children: []
   m_Father: {fileID: 340189916}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41121,7 +41121,7 @@ RectTransform:
   m_LocalScale: {x: 0.8, y: 0.79999995, z: 0.8}
   m_Children: []
   m_Father: {fileID: 340189916}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -44020,7 +44020,7 @@ Transform:
   m_GameObject: {fileID: 1031935066}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0013944209, y: 0, z: -0.005714286}
-  m_LocalScale: {x: 0.8692827, y: 0.5, z: 0.2857143}
+  m_LocalScale: {x: 0.8692827, y: 1, z: 0.2857143}
   m_Children:
   - {fileID: 318820405}
   m_Father: {fileID: 6799800454975513484}
@@ -75349,7 +75349,9 @@ MonoBehaviour:
   - {fileID: 1151643545}
   taskButtons:
   - {fileID: 2606339084754823253}
+  - {fileID: 1691528874}
   - {fileID: 2606339084857124414}
+  procedureManager: {fileID: 2012247710}
 --- !u!1001 &1753862250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89896,8 +89898,9 @@ MonoBehaviour:
   previousTaskIcon: {fileID: 3126786010410657847}
   nextTaskIcon: {fileID: 3126786009302976524}
   doneIcon: {fileID: 555616324}
-  taskList:
-  - taskTitle: Power on EMU
+  taskManager: {fileID: 1747433533}
+  UIATaskList:
+  - taskTitle: Power on EMU-1
     taskSteps:
     - taskStepTitle: Switch EMU-1 Power to ON
       taskSubSteps: []
@@ -89935,7 +89938,7 @@ MonoBehaviour:
       taskSubSteps: []
   - taskTitle: Fill EMU Water
     taskSteps:
-    - taskStepTitle: Dump waste water
+    - taskStepTitle: Dump Waste Water
       taskSubSteps:
       - Switch EV-1 Waste to OPEN
       - When water level is < 5%, proceed
@@ -89949,19 +89952,18 @@ MonoBehaviour:
     taskSteps:
     - taskStepTitle: Switch Depress Pump to ON
       taskSubSteps: []
-    - taskStepTitle: 'IF the pump faults:'
+    - taskStepTitle: IF the pump faults
       taskSubSteps:
-      - Switch the Depress Pump to OFF
+      - Switch Depress Pump to OFF
       - When the fault goes away, proceed
-      - Switch the Depress Pump to ON
-    - taskStepTitle: When airlock pressure is < 10.2 psi, switch Depress Pump to
-        OFF and proceed
+      - Switch Depress Pump to ON
+    - taskStepTitle: When airlock pressure is < 10.2 psi, switch to OFF and proceed
       taskSubSteps: []
   - taskTitle: Complete EMU Pressurization
     taskSteps:
     - taskStepTitle: Switch O2 Supply to OPEN
       taskSubSteps: []
-    - taskStepTitle: When UIA Supply Pressure > 3000 psi, proceed
+    - taskStepTitle: When UIA Supply Pressure is > 3000 psi, proceed
       taskSubSteps: []
     - taskStepTitle: Switch O2 Supply to CLOSE
       taskSubSteps: []
@@ -89975,8 +89977,32 @@ MonoBehaviour:
       taskSubSteps: []
   - taskTitle: UIA Procedures are complete, exit the airlock
     taskSteps: []
+  geologyTaskList:
+  - taskTitle: Select and scan one of the marked samples in the designated area
+    taskSteps: []
+  - taskTitle: Verbally confirm that you have received composition information for
+      the scanned sample
+    taskSteps: []
+  - taskTitle: Relayed requested composition information to the accompanying SUITS
+      team member
+    taskSteps: []
+  - taskTitle: Repeat this procedure at least two more times
+    taskSteps: []
+  roverTaskList:
+  - taskTitle: The university team member will receive a pre-determined point of
+      interest to relay to the design evaluator
+    taskSteps: []
+  - taskTitle: Command the rover using the UI
+    taskSteps: []
+  - taskTitle: After the rover has arrived at its destination, recall the rover to
+      its original position
+    taskSteps: []
+  - taskTitle: Once the rover has returned, the procedure is complete
+    taskSteps: []
   title:
   - UIA Procedure
+  - Geology Procedure
+  - Rover Procedure
   UIA: {fileID: 1481286058}
   DCU: {fileID: 2118713875}
   switches:
@@ -89991,6 +90017,7 @@ MonoBehaviour:
   - {fileID: 5724406}
   - {fileID: 1128014250}
   dcuBatt: {fileID: 1220117521}
+  activeProcedure: 0
 --- !u!114 &2012247711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91521,7 +91548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.04165996, y: -0.039}
+  m_AnchoredPosition: {x: 0.04165996, y: -0.051}
   m_SizeDelta: {x: 0.38, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060839003
@@ -94730,7 +94757,7 @@ Transform:
   - {fileID: 543450652633494469}
   - {fileID: 1301203688}
   m_Father: {fileID: 340189916}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -31.865002, z: 0}
 --- !u!1 &2119117075
 GameObject:
@@ -100392,7 +100419,7 @@ Transform:
   m_GameObject: {fileID: 221594250580820572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.008}
-  m_LocalScale: {x: 3, y: 0.5, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children:
   - {fileID: 3640519425272878245}
   m_Father: {fileID: 3126786009857535702}
@@ -100407,7 +100434,7 @@ Transform:
   m_GameObject: {fileID: 221594249474990695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.008}
-  m_LocalScale: {x: 3, y: 0.5, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children:
   - {fileID: 3640519426380854430}
   m_Father: {fileID: 3126786010896289517}
@@ -113825,7 +113852,7 @@ Transform:
   m_GameObject: {fileID: 3126786010410657847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.10000001, y: 0.0163, z: 0}
-  m_LocalScale: {x: 0.7, y: 2, z: 0.4}
+  m_LocalScale: {x: 0.7, y: 1, z: 0.4}
   m_Children:
   - {fileID: 3126786010711098189}
   - {fileID: 3914109834368994637}
@@ -114327,8 +114354,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3126786009302976524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.099999994, y: 0.016300008, z: 0}
-  m_LocalScale: {x: 0.7, y: 2, z: 0.4}
+  m_LocalPosition: {x: 0.0966, y: 0.016300008, z: 0}
+  m_LocalScale: {x: 0.7, y: 1, z: 0.4}
   m_Children:
   - {fileID: 3126786009669493622}
   - {fileID: 3914109835476938102}
@@ -122986,7 +123013,7 @@ Transform:
   m_GameObject: {fileID: 7594641649353873158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1031935067}
   - {fileID: 4857302740634225015}
